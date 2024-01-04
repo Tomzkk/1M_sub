@@ -28,7 +28,7 @@ func can_play_on_entity(application_type: Enums.ApplicationType, target: Entity)
 
 
 func set_party(in_party: Array[Entity]) -> void:
-	party += in_party
+	party = in_party
 	
 
 func add_party_member(party_member: Entity) -> void:
