@@ -65,6 +65,7 @@ func _on_enemy_start_turn() -> void:
 		enemy.get_status_component().apply_turn_start_status()
 		
 	_handle_enemy_deaths()
+	_check_and_handle_end_of_battle()
 	
 	# enemy attack
 	for enemy: Entity in _enemy_list:
@@ -75,6 +76,7 @@ func _on_enemy_start_turn() -> void:
 		
 		if can_attack:
 			enemy_attack.on_card_play(enemy, PlayerManager.player)
+			_check_and_handle_end_of_battle()
 	
 	# handle deaths here as well in case enemy attack/action results in them dying
 	_handle_enemy_deaths()
@@ -107,6 +109,7 @@ func _try_player_play_card_on_entity(entity: Entity) -> void:
 			CardManager.card_container.set_active_card(queued_card_data)
 			queued_card_data.on_card_play(PlayerManager.player, entity)
 			_handle_enemy_deaths()
+			_check_and_handle_end_of_battle()
 
 # function that checks for enemies that died - should probably be called after every card play and during enemy's turn (maybe even twice, once to check if buff didn't kill enemy and once to check if enemy attack didn't have a side effect that'd kill it
 func _handle_enemy_deaths() -> void:
@@ -122,4 +125,14 @@ func _handle_enemy_deaths() -> void:
 	for enemy in _enemy_list:
 		enemy.get_party_component().set_party(_enemy_list)
 
-	
+func _check_and_handle_end_of_battle() -> void:
+	if PlayerManager.player.get_health_component().current_health == 0:
+		print('GAME OVER')
+		PhaseManager.call_deferred("set_phase", Enums.Phase.GAME_STARTING)
+		SceneController.goto_scene("res://#Scenes/TestingScene.tscn")
+		PhaseManager.call_deferred("set_phase", Enums.Phase.PLAYER_ATTACKING)
+	if _enemy_list.is_empty():
+		print('WIN')
+		PhaseManager.call_deferred("set_phase", Enums.Phase.GAME_STARTING)
+		SceneController.goto_scene("res://#Scenes/TestingScene.tscn")
+		PhaseManager.call_deferred("set_phase", Enums.Phase.PLAYER_ATTACKING)
