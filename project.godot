@@ -17,6 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+SceneController="*res://Core/SceneController.gd"
 PlayerManager="*res://Managers/PlayerManager.gd"
 CardManager="*res://Managers/CardManager.gd"
 PhaseManager="*res://Managers/PhaseManager.gd"
