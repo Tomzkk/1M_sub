@@ -1,9 +1,8 @@
-[gd_scene load_steps=17 format=3 uid="uid://b60uabg68ra1l"]
+[gd_scene load_steps=15 format=3 uid="uid://b60uabg68ra1l"]
 
 [ext_resource type="PackedScene" uid="uid://clmg3l3n28x38" path="res://Entity/Player/Player.tscn" id="3_4psp7"]
 [ext_resource type="PackedScene" uid="uid://dpjfy4pv0vxst" path="res://Cards/CardContainer.tscn" id="3_e7sws"]
 [ext_resource type="Resource" uid="uid://dxgoopi1roxu4" path="res://Cards/Resource/Card_Damage.tres" id="4_wvn3v"]
-[ext_resource type="Resource" uid="uid://0x385c3nuq8f" path="res://Cards/Resource/Card_DamageAll.tres" id="5_j1lqt"]
 [ext_resource type="Resource" uid="uid://5yn4t13kwwoo" path="res://Cards/Resource/Card_DamageHealth.tres" id="6_4124l"]
 [ext_resource type="Resource" uid="uid://d4lugn62mmlep" path="res://Cards/Resource/Card_DrawCards.tres" id="7_smkw8"]
 [ext_resource type="PackedScene" uid="uid://bcpmrmofcilbn" path="res://Core/Battler.tscn" id="8_qtw1k"]
@@ -12,7 +11,6 @@
 [ext_resource type="Resource" uid="uid://d12g33rc6c3u5" path="res://Cards/Resource/Card_Heal.tres" id="9_ojxic"]
 [ext_resource type="Script" path="res://UI/DiscardPileUISetter.gd" id="10_pqly7"]
 [ext_resource type="Resource" uid="uid://3s4aet1ciesh" path="res://Cards/Resource/Card_damage_and_poison.tres" id="10_w0xgm"]
-[ext_resource type="Resource" uid="uid://bsrdu33ukb1ym" path="res://Cards/Resource/Card_EnemyAttack.tres" id="11_3k5t2"]
 [ext_resource type="Texture2D" uid="uid://caemucaya30wh" path="res://Cards/draw_pile.png" id="11_pw70x"]
 [ext_resource type="Texture2D" uid="uid://d4muqvs3etnr8" path="res://Cards/discard_pile.png" id="12_kxw48"]
 [ext_resource type="Script" path="res://UI/EndTurnButton.gd" id="14_dpe64"]
@@ -44,7 +42,7 @@ anchor_right = 0.5
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 0
-default_deck = Array[Resource("res://Cards/CardBase.gd")]([ExtResource("4_wvn3v"), ExtResource("5_j1lqt"), ExtResource("6_4124l"), ExtResource("7_smkw8"), ExtResource("9_ojxic"), ExtResource("8_x6t2k"), ExtResource("10_w0xgm"), ExtResource("11_3k5t2")])
+default_deck = Array[Resource("res://Cards/CardBase.gd")]([ExtResource("4_wvn3v"), ExtResource("6_4124l"), ExtResource("7_smkw8"), ExtResource("9_ojxic"), ExtResource("8_x6t2k"), ExtResource("10_w0xgm")])
 starting_hand_size = 10
 max_hand_width = 900.0
 min_card_separation = 90.0

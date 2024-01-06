@@ -14,14 +14,6 @@ value = 2
 
 [resource]
 script = ExtResource("1_bboy2")
-damage_to_apply_to_target = 0.0
-damage_to_apply_to_caster = 0.0
-status_to_apply_to_target = Array[Resource("res://Status/StatusBase.gd")]([])
-status_to_apply_to_caster = Array[Resource("res://Status/StatusBase.gd")]([])
-affect_all_targets = false
-affect_all_casters = false
-amount_of_cards_to_draw = 0
-amount_of_cards_to_discard = 0
 application_type = 0
 card_title = "Draw 2"
 card_description = "Draw 2 cards"

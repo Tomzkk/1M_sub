@@ -14,15 +14,7 @@ value = 3
 
 [resource]
 script = ExtResource("1_u6k7h")
-damage_to_apply_to_target = 0.0
-damage_to_apply_to_caster = 0.0
-status_to_apply_to_target = Array[Resource("res://Status/StatusBase.gd")]([])
-status_to_apply_to_caster = Array[Resource("res://Status/StatusBase.gd")]([])
-affect_all_targets = false
-affect_all_casters = false
-amount_of_cards_to_draw = 0
-amount_of_cards_to_discard = 0
-application_type = 1
+application_type = null
 card_title = "Poison"
 card_description = "Apply 3 poison"
 card_effects_data = Array[ExtResource("2_omhae")]([SubResource("Resource_bamld")])
